@@ -1,7 +1,7 @@
-# search-engine README
+# search-engine
 
-Python3 is a pre-requisite
-==========================
+* Python3 is a pre-requisite
+============================
 
 * Run "pip3 install -r requirements.txt" when inside the django project
     to install the required dependencies
@@ -11,10 +11,10 @@ Python3 is a pre-requisite
 
 * Run "python3 manage.py runserver 8000" to up the local server
 * Hit this api (GET): http://127.0.0.1:8000/preprocess to preprocess and
-  create all the data required for querying
+  create all the data required for querying (takes about 1 min to pre-populate)
 
-* In SAMPLE APIs (listed at the end):
-    1) API will preprocess and create all the data required for querying
+* In SAMPLE APIs (listed below):
+    1) API will preprocess and pre-populate all the data required for querying
     2) API will take a list of queries and k, and return a list of k matching results 
        {id:"string", author:"string", summary:"string", query:"string"} for each query
 
@@ -35,11 +35,12 @@ FREQ:
     
 
 FREQ <- Many-to-Many Relation with -> BOOK
+
 FREQ <- Many-to-Many Relation with -> WORD
 
 
-SAMPLE APIs (logic defined in app_rba/views.py):
------------
+SAMPLE APIs :
+-------------
 
 1) REQUEST (GET):  http://127.0.0.1:8000/preprocess
    RESPONSE: { "result": "success" }
@@ -106,3 +107,12 @@ SAMPLE APIs (logic defined in app_rba/views.py):
 }
 
 
+REFERENCE:
+----------
+http://www.tfidf.com/
+
+** Relevance of match is calculated based on summation of calculated tf-idf value for each book id
+
+
+P.S. - Have written basic unit tests with mock (First ever implementation of mocking). Wanted to 
+       keep total development time to maximum of 4-5 hours.

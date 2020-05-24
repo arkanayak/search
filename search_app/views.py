@@ -1,17 +1,21 @@
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-from django.conf import settings
 from utils.process_data import process
 from utils.search_query import search, get_author_api
 import json
 
+
 @csrf_exempt
 def preprocess(request):
-    result = process()
-    return JsonResponse({"result" : result})
+    """ preprocess and create all the data required for faster future querying"""
+    # result = process()
+    result = search("is your problems", 3)
+    return JsonResponse({"result": result})
+
 
 @csrf_exempt
 def process_queries(request):
+    """ take input: list of queries and k, and return a list of k matching results for each query"""
     post_body = json.loads(request.body.decode('utf-8'))
     list_queries = post_body.get("queries", None)
     k = post_body.get("k", None)
@@ -20,6 +24,7 @@ def process_queries(request):
     if not list_queries and not k:
         return JsonResponse({"error": "invalid input/s"})
     else:
+        """ add author and query to response"""
         for item in list_queries:
             temp = search(item, k)
             for j in temp:
@@ -30,7 +35,3 @@ def process_queries(request):
             final_res.append(temp)
 
     return JsonResponse({"result": final_res})
-
-
-
-

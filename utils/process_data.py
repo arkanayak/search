@@ -2,6 +2,7 @@ from django.conf import settings
 import json
 from search_app.models import *
 
+
 def process():
     stop_words = {"i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you",
                   "your", "yours", "yourself", "yourselves", "he", "him", "his", "himself",
@@ -21,13 +22,14 @@ def process():
     punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
     mapping_file = settings.BASE_DIR + '/search_app/input/data.json'
     f = open(mapping_file, 'r')
-    data = (json.load(f,  encoding="utf-8"))
+    data = (json.load(f, encoding="utf-8"))
 
     summaries = data['summaries']
     for i in range(len(summaries)):
         summary = summaries[i]['summary'].lower()
 
         for punc in punctuations:
+            """ clean data: replace punctuations """
             summary = summary.replace(punc, "")
 
         book = Book(book_id=i, count_words=0)
@@ -38,12 +40,13 @@ def process():
         word_dict = {}
         for word in words_list:
             if word in stop_words:
+                """ clean data: omit stop words"""
                 stop_words_count += 1
                 continue
             else:
                 try:
                     word_obj = Word.objects.get(w=word)
-                    word_dict[word] = word_dict[word]+1
+                    word_dict[word] = word_dict[word] + 1
                 except:
                     word_dict[word] = 1
                     word_obj = Word(w=word)
@@ -52,17 +55,13 @@ def process():
         book.count_words = len(words_list) - stop_words_count
         book.save()
 
-        for k,v in word_dict.items():
+        for k, v in word_dict.items():
+            """ create mapping b/w Freq object and Book and Word objects"""
             freq = Freq(count=v)
             freq.save()
             freq.word.add(Word.objects.get(w=k))
             freq.book.add(Book.objects.get(book_id=i))
 
-        # summaries[i]['summary'] = summary
         i += 1
 
     return "success"
-
-
-
-

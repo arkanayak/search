@@ -8,8 +8,7 @@ import json
 @csrf_exempt
 def preprocess(request):
     """ preprocess and create all the data required for faster future querying"""
-    # result = process()
-    result = search("is your problems", 3)
+    result = process()
     return JsonResponse({"result": result})
 
 

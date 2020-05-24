@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="40cdc1f8-c2a8-4c5a-8661-3b9768398ce1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/unibuddy_proj.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_app/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_app/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_app/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_app/input/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_app/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_app/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_app/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_app/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_app/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_app/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unibuddy_proj/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unibuddy_proj/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unibuddy_proj/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unibuddy_proj/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/process_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/search_query.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1cJgRqmAm7YeriP5Mq7dHJdNVIN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="unibuddy_proj" type="Python.DjangoServer" factoryName="Django server">
+      <module name="unibuddy_proj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40cdc1f8-c2a8-4c5a-8661-3b9768398ce1" name="Default Changelist" comment="" />
+      <created>1590252104483</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590252104483</updated>
+      <workItem from="1590252105635" duration="14120000" />
+      <workItem from="1590307902373" duration="51000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="495" y="155" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590307953218">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="495" y="155" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1590307953218" />
+    <state x="322" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590265351085">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="322" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1299.741@67.27.1299.741" timestamp="1590265351085" />
+    <state x="403" y="136" width="618" height="522" key="find.popup" timestamp="1590258098905">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="403" y="136" width="618" height="522" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1590258098905" />
+  </component>
+</project>

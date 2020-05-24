@@ -1,7 +1,6 @@
 # search-engine
 
 * Python3 is a pre-requisite
-============================
 
 * Run "pip3 install -r requirements.txt" when inside the django project
     to install the required dependencies
@@ -18,6 +17,9 @@
     2) API will take a list of queries and k, and return a list of k matching results 
        {id:"string", author:"string", summary:"string", query:"string"} for each query
 
+* Test cases can be run using: python3 manage.py test
+
+ 
 Model Definitions (search_app/models.py):
 -----------------
 

@@ -24,21 +24,21 @@ Model Definitions (search_app/models.py):
 -----------------
 
 BOOK:
-    [Fields]        = count_words, book_id (PK)
-    [Sample Values]: 23 , 1
+    [Fields]        = words_count,summary, id (PK)
+    [Sample Values]: 23 ,"The Book in Three Sentences: Practicing ...,  1
 
 WORD:
-    [Fields]        = w (DB index)
+    [Fields]        = text (DB index)
     [Sample Values]: "problems"
     
-FREQ:
-    [Fields]        = count, book, word
+FREQINDEX:
+    [Fields]        = count_words, book, word
     [Sample Values]:  3, book(obj), word(obj)
     
 
-FREQ <- Many-to-Many Relation with -> BOOK
+FREQINDEX <- Many-to-Many Relation with -> BOOK
 
-FREQ <- Many-to-Many Relation with -> WORD
+FREQINDEX <- Many-to-Many Relation with -> WORD
 
 
 SAMPLE APIs :
@@ -47,7 +47,7 @@ SAMPLE APIs :
 1) REQUEST (GET):  http://127.0.0.1:8000/preprocess
    RESPONSE: { "result": "success" }
 
-2) REQUEST (POST):  http://127.0.0.1:8000/process_queries
+2) REQUEST (POST):  http://127.0.0.1:8000/search_queries
    PAYLOAD : {  "queries" : ["is your problems", "achieve take book"], 
 	            "k": 3 }
 	            

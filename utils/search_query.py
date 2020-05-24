@@ -11,14 +11,14 @@ def search(search_term, k):
 
     res_book_dict = {}
     for term in search_term_list:
-        freq_obj = Freq.objects.filter(word__w=term)
+        freq_obj = FreqIndex.objects.filter(word__text=term)
         for item in freq_obj:
-            word_occ_book = item.count
+            word_occ_book = item.count_words
 
             books = item.book.all()
-            book_id = books[0].book_id
+            book_id = books[0].id
             """ get total words in the book summary """
-            total_words_book = books[0].count_words
+            total_words_book = books[0].words_count
 
             """ calculate tf-idf value for a word against a book summary """
             tf_idf = (word_occ_book / total_words_book) * math.log((total_books / (freq_obj.count() + 1)), 10)
@@ -36,14 +36,18 @@ def search(search_term, k):
     final_res = []
     for item in old_res:
         """ append summary to the result list """
+        query_dict = {}
         book_id = item[0]
-        mapping_file = settings.BASE_DIR + '/search_app/input/data.json'
-        f = open(mapping_file, 'r')
-        data = (json.load(f, encoding="utf-8"))
-
-        summaries = data['summaries']
-        summary = summaries[book_id]
-        final_res.append(summary)
+        # mapping_file = settings.BASE_DIR + '/search_app/input/data.json'
+        # f = open(mapping_file, 'r')
+        # data = (json.load(f, encoding="utf-8"))
+        #
+        # summaries = data['summaries']
+        # summary = summaries[book_id]
+        summary = Book.objects.get(id=book_id).summary
+        query_dict['id'] = book_id
+        query_dict['summary'] = summary
+        final_res.append(query_dict)
     return final_res
 
 

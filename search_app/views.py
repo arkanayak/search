@@ -13,7 +13,7 @@ def preprocess(request):
 
 
 @csrf_exempt
-def process_queries(request):
+def search_queries(request):
     """ take input: list of queries and k, and return a list of k matching results for each query"""
     post_body = json.loads(request.body.decode('utf-8'))
     list_queries = post_body.get("queries", None)
@@ -25,12 +25,12 @@ def process_queries(request):
     else:
         """ add author and query to response"""
         for item in list_queries:
-            temp = search(item, k)
-            for j in temp:
+            temp_res = search(item, k)
+            for j in temp_res:
                 book_id = j['id']
                 author = get_author_api(book_id)
                 j['author'] = author
                 j['query'] = item
-            final_res.append(temp)
+            final_res.append(temp_res)
 
     return JsonResponse({"result": final_res})

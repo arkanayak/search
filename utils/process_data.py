@@ -26,13 +26,14 @@ def process():
 
     summaries = data['summaries']
     for i in range(len(summaries)):
-        summary = summaries[i]['summary'].lower()
+        raw_summary = summaries[i]['summary']
+        summary = raw_summary.lower()
 
         for punc in punctuations:
             """ clean data: replace punctuations """
             summary = summary.replace(punc, "")
 
-        book = Book(book_id=i, count_words=0)
+        book = Book(id=i, words_count=0, summary=raw_summary)
         book.save()
 
         words_list = summary.split(" ")
@@ -45,22 +46,22 @@ def process():
                 continue
             else:
                 try:
-                    word_obj = Word.objects.get(w=word)
+                    word_obj = Word.objects.get(text=word)
                     word_dict[word] = word_dict[word] + 1
                 except:
                     word_dict[word] = 1
-                    word_obj = Word(w=word)
+                    word_obj = Word(text=word)
                     word_obj.save()
 
-        book.count_words = len(words_list) - stop_words_count
+        book.words_count = len(words_list) - stop_words_count
         book.save()
 
-        for k, v in word_dict.items():
+        for word, freq in word_dict.items():
             """ create mapping b/w Freq object and Book and Word objects"""
-            freq = Freq(count=v)
+            freq = FreqIndex(count_words=freq)
             freq.save()
-            freq.word.add(Word.objects.get(w=k))
-            freq.book.add(Book.objects.get(book_id=i))
+            freq.word.add(Word.objects.get(text=word))
+            freq.book.add(Book.objects.get(id=i))
 
         i += 1
 
